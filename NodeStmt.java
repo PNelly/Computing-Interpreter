@@ -3,18 +3,8 @@
 	cs354 Patrick Doudy September 2017
 */
 
-public class NodeStmt extends Node {
+// Statement Node Base Class, exists to be extended
+// because statements only meaningful in the context
+// of assn, read, write, if/else, while, and blocks
 
-    private NodeAssn assn;
-
-    public NodeStmt(NodeAssn assn) {
-
-		this.assn=assn;
-    }
-
-    public double eval(Environment env) throws EvalException {
-    	
-		return assn.eval(env);
-    }
-
-}
+public class NodeStmt extends Node { }

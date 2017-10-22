@@ -6,7 +6,7 @@
 // Node representing an asignment statement
 // Assn is a terminal
 
-public class NodeAssn extends Node {
+public class NodeAssn extends NodeStmt {
 
     private String id;
     private NodeExpr expr;

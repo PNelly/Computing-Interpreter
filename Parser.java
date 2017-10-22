@@ -202,11 +202,13 @@ public class Parser {
     // out the terminating semicolon
     private NodeStmt parseStmt() throws SyntaxException {
 
-		NodeAssn assn=parseAssn();
+		/*NodeAssn assn=parseAssn();
 		match(";");
 		NodeStmt stmt=new NodeStmt(assn);
 
-		return stmt;
+		return stmt;*/
+
+		return parseAssn();
     }
 
     // Top Level Method that begins descending program parsing

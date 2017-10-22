@@ -23,7 +23,7 @@ public class NodeBoolExpr extends Node {
     
     public double eval(Environment env) throws EvalException {
 
-		return relop.op(exprA.eval(),exprB.eval());
+		return relop.op(exprA.eval(env),exprB.eval(env));
     	
     }
 
