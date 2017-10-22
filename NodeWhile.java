@@ -21,10 +21,12 @@ public class NodeWhile extends NodeStmt {
 
 	public double eval(Environment env) throws EvalException {
 
-		while(bool.eval(env) == TRUE)
-			stmt.eval(env);
+		double result = FALSE;
 
-		return FALSE;
+		while(bool.eval(env) == TRUE)
+			result = stmt.eval(env);
+
+		return result;
 	}
 
 }

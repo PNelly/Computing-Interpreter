@@ -27,7 +27,7 @@ public class Interpreter {
 		    	// relationships to other nodes, the evaluate method of 
 		    	// the root node is called, triggering
 		    	// recursive evaluation of all the nodes
-				System.out.println(parser.parse(program).eval(env));
+				parser.parse(program).eval(env);
 
 		    } catch (SyntaxException e) {
 				System.err.println(e);
