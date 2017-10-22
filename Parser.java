@@ -197,9 +197,7 @@ public class Parser {
 		return assn;
     }
 
-    // Parse a Statement (only supports assign stmt)
-    // parse an assigment statement and seek
-    // out the terminating semicolon
+    // Parse a Statement
     private NodeStmt parseStmt() throws SyntaxException {
 
     	if (curr().equals(new Token("rd"))) {
@@ -233,7 +231,30 @@ public class Parser {
 			return new NodeIf(bool, stmtA, stmtB);
 		}
 
+		if (curr().equals(new Token("while"))){
+			match("while");
+			NodeBoolExpr bool = parseBoolExpr();
+			match("do");
+			NodeStmt stmt = parseStmt();
+
+			return new NodeWhile(bool, stmt);
+		}
+
 		return parseAssn();
+    }
+
+    // Parse a block of statements
+    private NodeBlock parseBlock() throws SyntaxException {
+
+    	NodeStmt stmt = parseStmt();
+    	NodeBlock nextBlock = null;
+
+    	if(curr().equals(new Token(";"))){
+    		match(";");
+    		nextBlock = parseBlock();
+    	}
+
+    	return new NodeBlock(stmt, nextBlock);
     }
 
     // Top Level Method that begins descending program parsing
@@ -244,7 +265,7 @@ public class Parser {
 		scanner=new Scanner(program);
 		scanner.next();
 
-		return parseStmt();
+		return parseBlock();
     }
 
 }
