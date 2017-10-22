@@ -1,6 +1,6 @@
 /* 
 	Interpreter Assignment 2
-	cs354 Patrick Doudy September 2017
+	cs354 Patrick Doudy October 2017
 */
 
 // Parse Tree Node Representing an If Statement

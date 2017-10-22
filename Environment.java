@@ -1,6 +1,6 @@
 /* 
-	Interpreter Assignment 1
-	cs354 Patrick Doudy September 2017
+	Interpreter Assignment 2
+	cs354 Patrick Doudy October 2017
 */
 
 // This class provides a stubbed-out environment.

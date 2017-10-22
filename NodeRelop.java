@@ -1,6 +1,6 @@
 /* 
 	Interpreter Assignment 1
-	cs354 Patrick Doudy September 2017
+	cs354 Patrick Doudy October 2017
 */
 
 // Node representing a Relational Operator
