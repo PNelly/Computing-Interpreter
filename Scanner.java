@@ -87,6 +87,8 @@ public class Scanner {
         s.add("else");
         s.add("while");
         s.add("do");
+        s.add("begin");
+        s.add("end");
     }
 
     // Initialize Comments

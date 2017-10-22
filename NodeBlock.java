@@ -7,9 +7,6 @@
 
 public class NodeBlock extends Node {
 
-	private static final double TRUE  = Interpreter.TRUE;
-	private static final double FALSE = Interpreter.FALSE;
-
 	private NodeStmt stmt;
 	private NodeBlock block;
 
@@ -20,7 +17,6 @@ public class NodeBlock extends Node {
 	}
 
 	public double eval(Environment env) throws EvalException {
-
 
 		if(block==null)
 			return stmt.eval(env);

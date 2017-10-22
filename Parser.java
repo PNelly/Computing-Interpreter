@@ -200,6 +200,7 @@ public class Parser {
     // Parse a Statement
     private NodeStmt parseStmt() throws SyntaxException {
 
+    	// parse input read node
     	if (curr().equals(new Token("rd"))) {
 		    match("rd");
 		    Token id=curr();
@@ -208,6 +209,7 @@ public class Parser {
 		    return read;
 		}
 
+		// parse output write node
 		if (curr().equals(new Token("wr"))) {
 			match("wr");
 			NodeExpr expr = parseExpr();
@@ -215,6 +217,7 @@ public class Parser {
 			return write;
 		}
 
+		// parse if statement node
 		if (curr().equals(new Token("if"))) {
 
 			match("if");
@@ -231,6 +234,7 @@ public class Parser {
 			return new NodeIf(bool, stmtA, stmtB);
 		}
 
+		// parse while loop node
 		if (curr().equals(new Token("while"))){
 			match("while");
 			NodeBoolExpr bool = parseBoolExpr();
@@ -240,6 +244,15 @@ public class Parser {
 			return new NodeWhile(bool, stmt);
 		}
 
+		// parse a block and return as a statement node
+		if (curr().equals(new Token("begin"))){
+			match("begin");
+			NodeBlock block = parseBlock();
+			match("end");
+			return new NodeBlockStmt(block);
+		}
+
+		// parse an assignment statement
 		return parseAssn();
     }
 
