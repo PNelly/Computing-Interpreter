@@ -1,5 +1,5 @@
 /* 
-    Interpreter Assignment 1
+    Interpreter Assignment 2
     cs354 Patrick Doudy September 2017
 */
 

@@ -1,5 +1,5 @@
 /* 
-	Interpreter Assignment 1
+	Interpreter Assignment 2
 	cs354 Patrick Doudy September 2017
 */
 
@@ -202,11 +202,13 @@ public class Parser {
     // out the terminating semicolon
     private NodeStmt parseStmt() throws SyntaxException {
 
-		/*NodeAssn assn=parseAssn();
-		match(";");
-		NodeStmt stmt=new NodeStmt(assn);
-
-		return stmt;*/
+    	if (curr().equals(new Token("rd"))) {
+		    match("rd");
+		    Token id=curr();
+		    match("id");
+		    NodeRead read = new NodeRead(id.lex());
+		    return read;
+		}
 
 		return parseAssn();
     }

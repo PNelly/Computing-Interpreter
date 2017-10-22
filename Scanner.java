@@ -1,5 +1,5 @@
 /* 
-    Interpreter Assignment 1
+    Interpreter Assignment 2
     cs354 Patrick Doudy September 2017
 */
 
@@ -79,7 +79,8 @@ public class Scanner {
 
     // Initialize Keywords
     private void initKeywords(Set<String> s) {
-
+        
+        s.add("rd");
     }
 
     // Initialize Comments
