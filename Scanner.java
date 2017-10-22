@@ -82,6 +82,9 @@ public class Scanner {
 
         s.add("rd");
         s.add("wr");
+        s.add("if");
+        s.add("then");
+        s.add("else");
     }
 
     // Initialize Comments

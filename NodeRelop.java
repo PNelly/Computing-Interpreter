@@ -8,6 +8,9 @@
 
 public class NodeRelop extends Node {
 
+	private static final double TRUE  = Interpreter.TRUE;
+	private static final double FALSE = Interpreter.FALSE;
+
     private String relop;
 
     // Addop Node Constructor
@@ -21,22 +24,22 @@ public class NodeRelop extends Node {
     public double op(double o1, double o2) throws EvalException {
 
 		if (relop.equals(">"))
-			return ( (o1>o2) ? 1.0 : 0.0 );
+			return ( (o1>o2) ? TRUE : FALSE );
 
 		if (relop.equals("<"))
-			return ( (o1<o2) ? 1.0 : 0.0 );
+			return ( (o1<o2) ? TRUE : FALSE );
 
 		if (relop.equals(">="))
-			return ( (o1>=o2) ? 1.0 : 0.0 );
+			return ( (o1>=o2) ? TRUE : FALSE );
 
 		if (relop.equals("<="))
-			return ( (o1<=o2) ? 1.0 : 0.0 );
+			return ( (o1<=o2) ? TRUE : FALSE );
 
 		if (relop.equals("<>"))
-			return ( (o1!=o2) ? 1.0 : 0.0 );
+			return ( (o1!=o2) ? TRUE : FALSE );
 
 		if (relop.equals("=="))
-			return ( (o1==o2) ? 1.0 : 0.0 );
+			return ( (o1==o2) ? TRUE : FALSE );
 
 		throw new EvalException(pos,"bogus relop: "+relop);
     }

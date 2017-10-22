@@ -217,6 +217,22 @@ public class Parser {
 			return write;
 		}
 
+		if (curr().equals(new Token("if"))) {
+
+			match("if");
+			NodeBoolExpr bool = parseBoolExpr();
+			match("then");
+			NodeStmt stmtA = parseStmt();
+			NodeStmt stmtB = null;
+
+			if(curr().equals(new Token("else"))){
+				match("else");
+				stmtB = parseStmt();
+			}
+
+			return new NodeIf(bool, stmtA, stmtB);
+		}
+
 		return parseAssn();
     }
 

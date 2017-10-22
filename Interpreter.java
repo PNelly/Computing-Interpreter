@@ -11,6 +11,9 @@
 
 public class Interpreter {
 
+	public static final double TRUE  = 1.0;
+	public static final double FALSE = 0.0;
+
     public static void main(String[] args) {
 
 		Parser parser=new Parser();
