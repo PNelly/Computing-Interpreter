@@ -1,0 +1,5 @@
+$ Interpreter Testing Block Statements
+$ @author Patrick Doudy
+$ CS354 October 2017
+
+wr 1; wr 2; wr 3; wr 4; wr 5; wr 6

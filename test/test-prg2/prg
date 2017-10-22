@@ -1,0 +1,13 @@
+$ Interpreter Test Program 2
+$ @author Patrick Doudy
+$ C354 October 2017
+
+$ various operations
+a = 3;
+a = a * a * a * a;
+if a == 81 then wr 999;
+
+b = a / 9;
+while b > 4 do b = b / 3;
+
+wr b

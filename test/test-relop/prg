@@ -1,0 +1,5 @@
+$ Interpreter Testing all the realtional operators
+$ @author Patrick Doudy
+$ CS354 October 2017
+
+if 1==1 then wr 1; if 2>1 then wr 2; if 1<2 then wr 3; if 4>=3 then wr 4; if -1<=0 then wr 5; if 8<>9 then wr 6

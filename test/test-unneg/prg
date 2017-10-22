@@ -1,1 +1,5 @@
-x = -10;
+$ Interpreter testing unary minus
+$ @author Patrick Doudy
+$ CS354 October 2017
+
+x = -10; wr x

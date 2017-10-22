@@ -1,1 +1,5 @@
-x = -(3*2-(-5));
+$ Interpreter Testing Expressions
+$ @author Patrick Doudy
+$ October 2017
+
+x = -(3*2-(-5)); wr x

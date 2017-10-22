@@ -1,0 +1,23 @@
+$ Interpreter Test Program 3
+$ @author Patrick Doudy
+$ CS354 October 2017
+
+$ variable definitions
+count = 0;
+i = 0;
+j = 0;
+dim = 4;
+
+$ nested while loops
+while i < dim do
+  begin
+    j = 0;
+    while j < dim do
+      begin 
+        count = count + 1; 
+	j = j + 1 
+      end;
+    i = i + 1
+  end;
+
+wr count

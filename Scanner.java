@@ -91,7 +91,7 @@ public class Scanner {
         s.add("end");
     }
 
-    // Initialize Comments
+    // Initialize Comment Marker
     private void initComments(Set<String> s) {
 
     	s.add("$");
@@ -111,6 +111,7 @@ public class Scanner {
 		initLegits(legits);
 		initKeywords(keywords);
 		initOperators(operators);
+        initComments(comments);
     }
 
     // handy string-processing methods
@@ -191,12 +192,12 @@ public class Scanner {
     }
 
     // Consume Next Comment
-    // increment the scanner past the comment without
-    // setting the token variable
+    // increment the scanner past the current line
+    // without acting on any characters
     private void nextComment() {
 
-    	many(whitespace);
-    	many(legits);
+        past('\n');
+        many(whitespace);
     }
 
     // Get Next Token
@@ -216,11 +217,12 @@ public class Scanner {
 		    nextKwId();
 		else if (operators.contains(c))
 		    nextOp();
-		else if (comments.contains(c))
+		else if (comments.contains(c)){
 			nextComment();
-		else {
+            return next();
+        } else {
 			// character not contained in any set
-		    System.err.println("illegal character at position "+pos);
+		    System.err.println("illegal character at position "+pos+": "+c);
 		    pos++;
 		    return next();
 		}

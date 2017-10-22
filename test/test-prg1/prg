@@ -1,0 +1,18 @@
+$ Interpreter Test Program 1
+$ @author Patrick Doudy
+$ CS354 October 2017
+
+$ variable definitions
+b = 2;
+p = 16;
+i = 0;
+num = 1;
+
+$ integer exponentiation
+while i < p do
+    begin
+	num = num * b;
+	i = i + 1
+    end;
+
+wr num

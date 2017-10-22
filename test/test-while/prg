@@ -1,0 +1,9 @@
+$ Interpreter Testing While Statements
+$ @author Patrick Doudy
+$ CS354 October 2017
+
+x = -10;
+while x <= -1 do
+    x = x + 1;
+
+wr x

@@ -1,1 +1,5 @@
-x = (9-4)*(7-15);
+$ Interpreter Testing Expressions
+$ @author Patrick Doudy
+$ October 2017
+
+x = (9-4)*(7-15); wr x
