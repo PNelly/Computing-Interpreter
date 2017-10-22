@@ -79,8 +79,9 @@ public class Scanner {
 
     // Initialize Keywords
     private void initKeywords(Set<String> s) {
-        
+
         s.add("rd");
+        s.add("wr");
     }
 
     // Initialize Comments

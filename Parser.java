@@ -210,6 +210,13 @@ public class Parser {
 		    return read;
 		}
 
+		if (curr().equals(new Token("wr"))) {
+			match("wr");
+			NodeExpr expr = parseExpr();
+			NodeWrite write = new NodeWrite(expr);
+			return write;
+		}
+
 		return parseAssn();
     }
 
