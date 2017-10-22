@@ -69,6 +69,12 @@ public class Scanner {
 		s.add("(");
 		s.add(")");
 		s.add(";");
+        s.add("<");
+        s.add(">");
+        s.add("<=");
+        s.add(">=");
+        s.add("<>");
+        s.add("==");
     }
 
     // Initialize Keywords

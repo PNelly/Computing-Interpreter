@@ -21,7 +21,7 @@ public class Interpreter {
 
 		    	// This call will drive the recursive-descent parsing
 		    	// process, which creates the parse tree nodes and their
-		    	// relationships to other nodes, then evaluate method of 
+		    	// relationships to other nodes, the evaluate method of 
 		    	// the root node is called, triggering
 		    	// recursive evaluation of all the nodes
 				System.out.println(parser.parse(program).eval(env));

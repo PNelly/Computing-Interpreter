@@ -32,6 +32,42 @@ public class Parser {
 
     // Parse Tree Node Methods
 
+    // Prase a relational operator
+    private NodeRelop parseRelop() throws SyntaxException {
+
+    	if(curr().equals(new Token(">"))) {
+    		match(">");
+    		return new NodeRelop(pos(),">");
+    	}
+
+    	if(curr().equals(new Token("<"))) {
+    		match("<");
+    		return new NodeRelop(pos(),"<");
+    	}
+
+    	if(curr().equals(new Token(">="))) {
+    		match(">=");
+    		return new NodeRelop(pos(),">=");
+    	}
+
+    	if(curr().equals(new Token("<="))) {
+    		match("<=");
+    		return new NodeRelop(pos(),"<=");
+    	}
+
+    	if(curr().equals(new Token("<>"))) {
+    		match("<>");
+    		return new NodeRelop(pos(),"<>");
+    	}
+
+    	if(curr().equals(new Token("=="))) {
+    		match("==");
+    		return new NodeRelop(pos(),"==");
+    	}
+
+    	return null;
+    }
+
     // Parse a unary negation
     private NodeUnNeg parseUnNeg() throws SyntaxException {
 
@@ -75,6 +111,16 @@ public class Parser {
 		}
 
 		return null;
+    }
+
+    // Parse a boolean expression
+    private NodeBoolExpr parseBoolExpr() throws SyntaxException {
+
+    	NodeExpr 	exprA=parseExpr();
+    	NodeRelop	relop=parseRelop();
+    	NodeExpr 	exprB=parseExpr();
+
+    	return new NodeBoolExpr(exprA, relop, exprB);
     }
 
     // Parse a factor
